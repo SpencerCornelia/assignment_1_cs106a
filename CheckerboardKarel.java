@@ -31,8 +31,20 @@ public class CheckerboardKarel extends SuperKarel {
 	public void checkerBoard() {
 		if (avenue % 2 != 0) {
 			putBeeperOnOddAvenue();
+			if (leftIsClear()) {
+				turnLeft();
+				move();
+				turnLeft();
+				avenue++;
+			}
 		} else {
 			putBeeperOnEvenAvenue();
+			if (rightIsClear()) {
+				turnRight();
+				move();
+				turnRight();
+				avenue++;
+			}
 		}
 	}
 
