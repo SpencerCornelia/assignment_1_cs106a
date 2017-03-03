@@ -13,7 +13,7 @@ import stanford.karel.*;
 public class CollectNewspaperKarel extends SuperKarel {
 	
 	// You fill in this part
-	public void moveToNewspaper() {
+	private void moveToNewspaper() {
 		turnRight();
 		move();
 		turnLeft();
@@ -24,14 +24,14 @@ public class CollectNewspaperKarel extends SuperKarel {
 		turnAround();
 	}
 	
-	public void pickUpNewspaper() {
+	private void pickUpNewspaper() {
 		if (beepersPresent()) {
 			pickBeeper();
 		}
 		turnAround();
 	}
 	
-	public void returnHome() {
+	private void returnHome() {
 		while(frontIsClear()) {
 			move();
 		}
