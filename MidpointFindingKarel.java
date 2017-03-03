@@ -38,5 +38,14 @@ public class MidpointFindingKarel extends SuperKarel {
 			halfway -= 0.5;
 		}
 	}
+	
+	public void goToMidwayPoint() {
+		turnAround();
+		for (int i = halfway; i >= 0; i--) {
+			move();
+		}
+		move();
+		putBeeper();
+	}
 
 }
