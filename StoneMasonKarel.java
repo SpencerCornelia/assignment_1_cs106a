@@ -31,6 +31,7 @@ public class StoneMasonKarel extends SuperKarel {
 			if (i == 1 || i == 5 || i == 9) {
 				moveToNextArch();	
 			}
+			turnLeft();
 		}
 	}
 	
