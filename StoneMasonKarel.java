@@ -12,6 +12,49 @@ import stanford.karel.*;
 
 public class StoneMasonKarel extends SuperKarel {
 
-	// You fill in this part
-
+	/* algorithm for problem 2
+	 * turn left
+	 * move up the avenue
+	 * place a beeper where beeper is not present
+	 * check if beeper is on last avenue before wall and place beeper if one is not present
+	 * turn around
+	 * go back down to wall
+	 * turn left 
+	 */
+	
+	public void repairArches() {
+		for (int i = 1; i <= 13; i += 4) {
+			turnLeft();
+			moveUpAvenue();
+			turnAround();
+			returnToFirstAvenue();
+			if (i == 1 || i == 5 || i == 9) {
+				moveToNextArch();	
+			}
+		}
+	}
+	
+	public void moveUpAvenue() {
+		while(frontIsClear()) {
+			if (noBeepersPresent()) {
+				putBeeper();
+			}
+		}
+		if (noBeepersPresent()) {
+			putBeeper();
+		}
+	}
+	
+	public void returnToFirstAvenue() {
+		while(frontIsClear()) {
+			move();
+		}
+		turnLeft();
+	}
+	
+	public void moveToNextArch() {
+		for (int i = 0; i <= 3; i++) {
+			move();
+		}
+	}
 }
